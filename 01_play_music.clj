@@ -23,8 +23,11 @@
 ; (pad 440)
 ; (drum)
 
+(defn play [inst notes]
+  (doseq [note notes] (inst (midi->hz note))))
+
 (defn play-chord [inst root chord-name]
-  (doseq [note (chord root chord-name)] (inst (midi->hz note))))
+  (play inst (chord root chord-name)))
 
 
 (def metro (metronome 240))
