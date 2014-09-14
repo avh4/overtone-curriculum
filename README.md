@@ -15,6 +15,11 @@
    - [00_does_overtone_work.clj](00_does_overtone_work.clj) some small samples.  You should hear sound if you run them.
    - [01_play_music.clj](01_play_music.clj) a drum track, and chords with a MIDI-controlled lead for you to play
 
+# Good things to know
+
+ - enter `(stop)` to terminate any playing sounds
+ - type Control-D to exit the clojure interpreter
+
 # What to explain
 
  - clojure `doseq`
