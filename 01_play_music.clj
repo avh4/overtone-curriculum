@@ -1,30 +1,32 @@
 (use 'overtone.live)
 
 
-(definst pad [freq 440] 
-  (* (env-gen (env-lin))
-     (sin-osc freq)))
+(definst pad [note 60 velocity 100]
+  (let [freq (midicps note)
+        amp (/ velocity 127.0)
+        env (env-gen (env-lin))]
+    (* amp env (sin-osc freq))))
 
-(definst lead [freq 440] 
-  (* (env-gen (env-lin))
-     (saw freq)))
+(definst lead [note 60 velocity 100]
+  (let [freq (midicps note)
+        amp (/ velocity 127.0)
+        env (env-gen (env-lin))]
+    (* amp env (saw freq))))
 
-(definst drum []
-  (* (env-gen (perc))
-     (white-noise)))
+(definst drum [note 60 velocity 100]
+  (let [freq (midicps note)
+        amp (/ velocity 127.0)
+        env (env-gen (perc))]
+    (* amp env (white-noise))))
 
-; (definst kick []
-;   (* (env-gen (perc))
-;     (white-noise)))
-     
 
-;; We can play notes using frequency in Hz
-; (lead 440)
-; (pad 440)
+;; We can play notes
+; (lead (note :C4))
+; (pad (note :C4))
 ; (drum)
 
 (defn play [inst notes]
-  (doseq [note notes] (inst (midi->hz note))))
+  (doseq [note notes] (inst note)))
 
 (defn play-chord [inst root chord-name]
   (play inst (chord root chord-name)))
