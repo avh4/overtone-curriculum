@@ -30,20 +30,18 @@
   (play inst (chord root chord-name)))
 
 
-(def metro (metronome 240))
-(defn chord-progression-beat [m beat-num]
-  (at (m (+ 0 beat-num)) (play-chord pad :C4 :major))
-  (at (m (+ 4 beat-num)) (play-chord pad :G3 :major))
-  (at (m (+ 8 beat-num)) (play-chord pad :A3 :minor))
-  (at (m (+ 12 beat-num)) (play-chord pad :F3 :major))
+(defn chord-progression-beat [m]
+  (at (m  0) (play-chord pad :C4 :major))
+  (at (m  4) (play-chord pad :G3 :major))
+  (at (m  8) (play-chord pad :A3 :minor))
+  (at (m 12) (play-chord pad :F3 :major))
   
   (doseq [i (range 0 16 3)]
-    (at (m (+ i beat-num)) (drum))
+    (at (m i) (drum))
   )
   
-  (at (m (+ 16 beat-num)) (chord-progression-beat m (+ 16 beat-num)))
-  ; (apply-at (m (+ 16 beat-num)) chord-progression-beat m (+ 16 beat-num) [])
+  (apply-at (m 16) #(chord-progression-beat (metronome 240)))
 )
-(chord-progression-beat metro (metro))
+(chord-progression-beat (metronome 240))
 
 ; (stop)
