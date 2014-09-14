@@ -9,11 +9,11 @@
   (* (env-gen (env-lin))
      (saw freq)))
 
-(definst drum
+(definst drum []
   (* (env-gen (perc))
      (white-noise)))
 
-; (definst kick
+; (definst kick []
 ;   (* (env-gen (perc))
 ;     (white-noise)))
      
