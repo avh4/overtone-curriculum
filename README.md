@@ -18,3 +18,9 @@
 # What to explain
 
  - clojure `doseq`
+
+
+# Useful tools
+
+ - (Mac): [MIDI Monitor](http://www.snoize.com/MIDIMonitor/) check to see if MIDI events are getting to the computer
+ - [VMPK](http://vmpk.sourceforge.net/) Virtual MIDI Piano Keyboard (if you don't have a real MIDI instrument)
