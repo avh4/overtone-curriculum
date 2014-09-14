@@ -26,11 +26,10 @@
 ; (drum)
 
 
-; Play the lead from the MIDI input
-(def lead-player (midi-poly-player lead))
-
-; and stop it:
-; (midi-player-stop lead-player)
+; Play from the MIDI input
+(midi-poly-player lead)
+; (midi-poly-player pad)
+; (midi-poly-player drum)
 
 (defn play-notes [inst notes]
   (doseq [note notes] (inst note)))
