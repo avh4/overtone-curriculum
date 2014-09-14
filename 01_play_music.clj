@@ -25,11 +25,18 @@
 ; (pad (note :C4))
 ; (drum)
 
-(defn play [inst notes]
+
+; Play the lead from the MIDI input
+(def lead-player (midi-poly-player lead))
+
+; and stop it:
+; (midi-player-stop lead-player)
+
+(defn play-notes [inst notes]
   (doseq [note notes] (inst note)))
 
 (defn play-chord [inst root chord-name]
-  (play inst (chord root chord-name)))
+  (play-notes inst (chord root chord-name)))
 
 
 (defn chord-progression-beat []
