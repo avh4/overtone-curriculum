@@ -9,11 +9,11 @@
   (* (env-gen (env-lin))
      (saw freq)))
 
-(definst drum [freq 440]
+(definst drum
   (* (env-gen (perc))
      (white-noise)))
 
-; (definst kick [freq 440]
+; (definst kick
 ;   (* (env-gen (perc))
 ;     (white-noise)))
      
@@ -35,7 +35,7 @@
   (at (m (+ 12 beat-num)) (play-chord pad :F3 :major))
   
   (for [i (range 0 16 3)]
-    (at (m (+ i beat-num)) (drum 440))
+    (at (m (+ i beat-num)) (drum))
   )
   
   ; (apply-at (m (+ 16 beat-num)) chord-progression-beat m (+ 16 beat-num) [])
