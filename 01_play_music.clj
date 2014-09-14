@@ -37,10 +37,11 @@
   (at (m (+ 8 beat-num)) (play-chord pad :A3 :minor))
   (at (m (+ 12 beat-num)) (play-chord pad :F3 :major))
   
-  (for [i (range 0 16 3)]
+  (doseq [i (range 0 16 3)]
     (at (m (+ i beat-num)) (drum))
   )
   
+  (at (m (+ 16 beat-num)) (chord-progression-beat m (+ 16 beat-num)))
   ; (apply-at (m (+ 16 beat-num)) chord-progression-beat m (+ 16 beat-num) [])
 )
 (chord-progression-beat metro (metro))

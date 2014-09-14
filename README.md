@@ -15,3 +15,6 @@
    - [00_does_overtone_work.clj](00_does_overtone_work.clj) some small samples.  You should hear sound if you run them.
    - [01_play_music.clj](01_play_music.clj) a drum track, and chords with a MIDI-controlled lead for you to play
 
+# What to explain
+
+ - clojure `doseq`
