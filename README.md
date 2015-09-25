@@ -6,7 +6,7 @@
  - (Mac): Install [homebrew](http://brew.sh/)
    - Open the Terminal app
    - paste the following command: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
- - (Mac): In Terminal, run `brew install leinigen` to install `lein`, the command-line app we need to run Overtone
+ - (Mac): In Terminal, run `brew install leiningen` to install `lein`, the command-line app we need to run Overtone
  - Run `git clone https://github.com/avh4/overtone-curriculum.git` to copy this project to your computer
  - Switch to the newly-copied project with `cd overtone-curriculum`
  - Run `lein repl` to start the clojure interpreter and to download Overtone if necessary
